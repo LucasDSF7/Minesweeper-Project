@@ -58,12 +58,13 @@ class MinesweeperBoard(private val boardSize: Int = 9, private val nBombs: Int =
     }
 
     private fun displayBoard(boardPrint: MutableList<MutableList<String>> = playerBoard) {
-        println(" |${(1..boardSize).joinToString("")}|")
-        println("-|${List(boardSize) {"-"}.joinToString("")}|")
+        println(" |${(1..boardSize).joinToString(" ")}|\n")
+        println("-|${List(boardSize) {"-"}.joinToString(" ")}|\n")
         for (i in 0 until boardSize) {
-            println("${i + 1}|${ boardPrint[i].joinToString(separator = "") }|")
+            println("${i + 1}|${ boardPrint[i].joinToString(separator = " ") }|\n")
         }
-        println("-|${List(boardSize) {"-"}.joinToString("")}|")
+        println("-|${List(boardSize) {"-"}.joinToString(" ")}|\n")
+        println(" |${(1..boardSize).joinToString(" ")}|\n")
     }
 
     private fun playerInput(): List<String> {
